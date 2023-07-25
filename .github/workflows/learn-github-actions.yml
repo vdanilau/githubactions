@@ -21,10 +21,10 @@ jobs:
           path: output.log
       - name: Echo secret
         shell: bash
+        env:
+          SUPER_SECRET: ${{ secrets.TEST_SECRET }}
         run: |
-          echo "Secret: $super_secret"
-          with:
-            super_secret: ${{ secrets.TEST_SECRET }} 
+          example-command "$SUPER_SECRET"
           
 
       

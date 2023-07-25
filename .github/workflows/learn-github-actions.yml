@@ -19,4 +19,10 @@ jobs:
         with:
           name: output-log-file
           path: output.log
+      - name: Hello world action
+        with: # Set the secret as an input
+          super_secret: ${{ secrets.TEST_SECRET }}
+      - shell: bash
+        run: |
+          echo "secret: $super_secret"
       
